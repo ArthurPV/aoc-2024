@@ -66,6 +66,8 @@ void split_on_new_line(char *start, Line *lines)
 			}
 		}
 
+		assert(line_count < MAX_LINE && "the number of line need to be less than MAX_LINE");
+
 		for (int i = 0; i < num_count; ++i) {
 			lines[line_count].nums[i] = atoi(line[i]);
 		}
