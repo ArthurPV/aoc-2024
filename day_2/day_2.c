@@ -24,7 +24,7 @@ validate_line_part_1(int *ns, int num_count, int *safes);
 /// @param ns int* (&)
 /// @param safes int* (&)
 static void
-validate_line_part_2(int *ns, int num_count, bool *is_safe, int ignore_report);
+validate_line_part_2(int *ns, int num_count, bool *is_safe);
 
 /// @param file_content char* (&)
 static void
@@ -102,7 +102,7 @@ validate_line_part_1(int *ns, int num_count, int *safes)
 }
 
 void
-validate_line_part_2(int *ns, int num_count, bool *is_safe, int ignore_report)
+validate_line_part_2(int *ns, int num_count, bool *is_safe)
 {
 	int first_num = *ns;
 	int next_num = ns[1];
@@ -163,7 +163,7 @@ part_2(char *file_content)
 				}
 			}
 
-			validate_line_part_2(tmp_nums, lines[i].num_count - 1, &is_safe, j);
+			validate_line_part_2(tmp_nums, lines[i].num_count - 1, &is_safe);
 		}
 
 		if (is_safe) {
